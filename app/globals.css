@@ -1,26 +1,89 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Mental Health Optimized Color System */
+    --background: 0 0% 99%;
+    --foreground: 0 0% 16%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 16%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 0 0% 16%;
+    
+    /* Primary - Sage Green (Trust & Growth) */
+    --primary: 120 14% 43%;
+    --primary-foreground: 120 14% 99%;
+    
+    /* Secondary - Soft Teal (Balance & Clarity) */
+    --secondary: 180 25% 50%;
+    --secondary-foreground: 180 25% 99%;
+    
+    /* Accent - Soft Lavender (Calm & Introspection) */
+    --accent: 250 30% 75%;
+    --accent-foreground: 250 30% 15%;
+    
+    /* Functional Colors - Gentle but Clear */
+    --destructive: 25 60% 60%;
+    --destructive-foreground: 25 60% 99%;
+    --success: 125 40% 50%;
+    --success-foreground: 125 40% 99%;
+    --warning: 45 75% 65%;
+    --warning-foreground: 45 75% 15%;
+    
+    /* Neutral System */
+    --muted: 120 8% 96%;
+    --muted-foreground: 0 0% 54%;
+    --border: 120 8% 91%;
+    --input: 120 8% 91%;
+    --ring: 120 14% 43%;
+    --radius: 0.5rem;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .dark {
+    /* Dark Mode - Maintaining therapeutic warmth */
+    --background: 220 15% 8%;
+    --foreground: 220 8% 94%;
+    --card: 220 15% 10%;
+    --card-foreground: 220 8% 94%;
+    --popover: 220 15% 10%;
+    --popover-foreground: 220 8% 94%;
+    
+    /* Primary - Lighter Sage for dark mode */
+    --primary: 120 20% 65%;
+    --primary-foreground: 120 20% 15%;
+    
+    /* Secondary - Softer Teal for dark mode */
+    --secondary: 180 30% 65%;
+    --secondary-foreground: 180 30% 15%;
+    
+    /* Accent - Warmer Lavender for dark mode */
+    --accent: 250 35% 80%;
+    --accent-foreground: 250 35% 15%;
+    
+    /* Functional Colors - Dark mode adaptations */
+    --destructive: 25 65% 70%;
+    --destructive-foreground: 25 65% 15%;
+    --success: 125 45% 65%;
+    --success-foreground: 125 45% 15%;
+    --warning: 45 80% 75%;
+    --warning-foreground: 45 80% 15%;
+    
+    /* Dark Neutral System */
+    --muted: 220 15% 15%;
+    --muted-foreground: 0 0% 65%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 120 20% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  }
 }

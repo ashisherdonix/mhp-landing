@@ -11,15 +11,23 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <header className="border-b-2 border-border/60 bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Brain className="w-5 h-5 text-primary-foreground" />
+          <Link href="/" className="flex items-center group">
+            <div className="relative">
+              {/* Clean Professional Logo */}
+              <span className="text-2xl font-bold tracking-tight">
+                <span className="text-primary drop-shadow-sm">EMP</span>
+                <span className="text-secondary drop-shadow-sm">H</span>
+                <span className="text-accent drop-shadow-sm">IO</span>
+              </span>
+              {/* Subtle underline - only on hover for professional contexts */}
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 group-hover:w-full"></div>
             </div>
-            <span className="text-xl font-semibold text-foreground">MindBridge</span>
+            {/* Single color fallback (hidden, available for print CSS) */}
+            <span className="hidden print:block text-2xl font-bold tracking-tight text-gray-800">EMPHIO</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -27,37 +35,28 @@ export default function Header() {
             <Link href="/how-it-works" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               How It Works
             </Link>
-            <Link href="/pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Pricing
-            </Link>
-            <Link href="/security" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Security
-            </Link>
-            <Link href="/case-studies" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Case Studies
-            </Link>
-            <Link href="/resources" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Resources
-            </Link>
             <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               About
+            </Link>
+            <Link href="/issues" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Issues We Address
+            </Link>
+            <Link href="/security" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Data Privacy
             </Link>
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" asChild>
-              <Link href="/contact">Contact Sales</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/demo">Book Demo</Link>
+          <div className="hidden md:flex items-center">
+            <Button asChild className="font-semibold shadow-sm">
+              <Link href="/demo">Get Started</Link>
             </Button>
           </div>
 
           {/* Mobile CTA + Menu Button */}
           <div className="flex items-center space-x-2 md:hidden">
-            <Button size="sm" asChild>
-              <Link href="/demo">Demo</Link>
+            <Button size="sm" asChild className="font-semibold shadow-sm">
+              <Link href="/demo">Start</Link>
             </Button>
             <Button 
               variant="ghost" 
@@ -83,51 +82,32 @@ export default function Header() {
                 How It Works
               </Link>
               <Link 
-                href="/pricing" 
-                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link 
-                href="/security" 
-                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Security
-              </Link>
-              <Link 
-                href="/case-studies" 
-                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Case Studies
-              </Link>
-              <Link 
-                href="/resources" 
-                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Resources
-              </Link>
-              <Link 
                 href="/about" 
                 className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
+              <Link 
+                href="/issues" 
+                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Issues We Address
+              </Link>
+              <Link 
+                href="/security" 
+                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Data Privacy
+              </Link>
               
-              {/* Mobile CTA Buttons */}
-              <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full" asChild>
-                  <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Contact Sales
-                  </Link>
-                </Button>
+              {/* Mobile CTA Button */}
+              <div className="pt-4">
                 <Button className="w-full" asChild>
                   <Link href="/demo" onClick={() => setIsMenuOpen(false)}>
-                    Book Demo
+                    Get Started
                   </Link>
                 </Button>
               </div>

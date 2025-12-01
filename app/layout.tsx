@@ -13,7 +13,7 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Mental Health Platform",
+  title: "Emphio - Mental Health Platform for Schools",
   description: "India's first AI-powered mental health platform designed exclusively for schools",
 };
 

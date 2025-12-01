@@ -12,17 +12,17 @@
     --popover: 0 0% 99%;
     --popover-foreground: 0 0% 16%;
     
-    /* Primary - Sage Green (Trust & Growth) */
-    --primary: 120 14% 43%;
-    --primary-foreground: 120 14% 99%;
+    /* Primary - Professional Teal (Healing & Growth) */
+    --primary: 170 50% 35%;
+    --primary-foreground: 170 50% 98%;
     
-    /* Secondary - Soft Teal (Balance & Clarity) */
-    --secondary: 180 25% 50%;
-    --secondary-foreground: 180 25% 99%;
+    /* Secondary - Deep Warm Blue (Stability & Trust) */
+    --secondary: 210 60% 40%;
+    --secondary-foreground: 210 60% 98%;
     
-    /* Accent - Soft Lavender (Calm & Introspection) */
-    --accent: 250 30% 75%;
-    --accent-foreground: 250 30% 15%;
+    /* Accent - Warm Orange (Hope & Progress) */
+    --accent: 25 70% 50%;
+    --accent-foreground: 25 70% 98%;
     
     /* Functional Colors - Gentle but Clear */
     --destructive: 25 60% 60%;
@@ -32,12 +32,12 @@
     --warning: 45 75% 65%;
     --warning-foreground: 45 75% 15%;
     
-    /* Neutral System */
-    --muted: 120 8% 96%;
-    --muted-foreground: 0 0% 54%;
-    --border: 120 8% 91%;
-    --input: 120 8% 91%;
-    --ring: 120 14% 43%;
+    /* Neutral System - Warm Professional */
+    --muted: 170 15% 95%;
+    --muted-foreground: 0 0% 45%;
+    --border: 170 15% 87%;
+    --input: 170 15% 87%;
+    --ring: 170 50% 35%;
     --radius: 0.5rem;
   }
 
@@ -50,17 +50,17 @@
     --popover: 220 15% 10%;
     --popover-foreground: 220 8% 94%;
     
-    /* Primary - Lighter Sage for dark mode */
-    --primary: 120 20% 65%;
-    --primary-foreground: 120 20% 15%;
+    /* Primary - Lighter Teal for dark mode */
+    --primary: 170 40% 65%;
+    --primary-foreground: 170 40% 15%;
     
-    /* Secondary - Softer Teal for dark mode */
-    --secondary: 180 30% 65%;
-    --secondary-foreground: 180 30% 15%;
+    /* Secondary - Softer Blue for dark mode */
+    --secondary: 210 45% 65%;
+    --secondary-foreground: 210 45% 15%;
     
-    /* Accent - Warmer Lavender for dark mode */
-    --accent: 250 35% 80%;
-    --accent-foreground: 250 35% 15%;
+    /* Accent - Softer Orange for dark mode */
+    --accent: 25 55% 70%;
+    --accent-foreground: 25 55% 15%;
     
     /* Functional Colors - Dark mode adaptations */
     --destructive: 25 65% 70%;
@@ -75,7 +75,7 @@
     --muted-foreground: 0 0% 65%;
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 120 20% 65%;
+    --ring: 170 40% 65%;
   }
 
   * {
@@ -85,5 +85,21 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter), var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Logo print fallback */
+  @media print {
+    .logo-colorful {
+      display: none !important;
+    }
+    .logo-print {
+      display: block !important;
+      color: #000 !important;
+    }
+  }
+
+  /* Static logo variant for formal presentations */
+  .logo-static .group:hover div {
+    width: 0 !important;
   }
 }

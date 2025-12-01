@@ -8,12 +8,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Brain className="w-5 h-5 text-primary-foreground" />
+            <Link href="/" className="inline-block group">
+              <div className="relative">
+                <span className="text-lg font-bold tracking-tight">
+                  <span className="text-primary drop-shadow-sm">EMP</span>
+                  <span className="text-secondary drop-shadow-sm">H</span>
+                  <span className="text-accent drop-shadow-sm">IO</span>
+                </span>
+                <div className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 group-hover:w-full"></div>
               </div>
-              <span className="text-lg font-semibold">MindBridge</span>
-            </div>
+            </Link>
             <p className="text-sm text-muted-foreground">
               India's first AI-powered mental health platform designed exclusively for schools.
             </p>
@@ -56,7 +60,7 @@ export default function Footer() {
             <div className="pt-4">
               <div className="flex items-center text-xs text-muted-foreground mb-1">
                 <Mail className="w-3 h-3 mr-2" />
-                schools@mindbridge.in
+                schools@emphio.com
               </div>
               <div className="flex items-center text-xs text-muted-foreground">
                 <Phone className="w-3 h-3 mr-2" />
@@ -69,7 +73,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-border/40 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground">
-            © 2024 MindBridge. All rights reserved.
+            © 2024 Emphio. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">

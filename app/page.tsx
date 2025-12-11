@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -8,6 +9,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* Survey Banner - Top of Page */}
+      <div className="bg-primary/5 border-b border-primary/20 py-3">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-sm md:text-base text-muted-foreground">
+            Help us understand mental health challenges in schools - 
+            <Button variant="link" className="text-primary hover:text-primary/80 p-0 ml-1 h-auto font-medium" asChild>
+              <Link href="/survey">please take our 5-minute anonymous survey</Link>
+            </Button>
+          </p>
+        </div>
+      </div>
+      
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section - B2B Focus */}
         <div className="text-center max-w-7xl mx-auto mb-16">
@@ -126,6 +140,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
 
         {/* Crisis Statistics - Executive Dashboard */}
         <div className="max-w-7xl mx-auto mb-16">
@@ -591,11 +606,20 @@ export default function Home() {
               We're building the bridge that lets them take the first step without fear—and walks with them all the way to recovery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Book Demo
+              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+                <Link href="/survey">
+                  Take Assessment Now
+                </Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary/5">
-                View Case Studies
+              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
+                <Link href="/demo">
+                  Book Demo
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/5" asChild>
+                <Link href="/case-studies">
+                  View Case Studies
+                </Link>
               </Button>
             </div>
           </CardContent>

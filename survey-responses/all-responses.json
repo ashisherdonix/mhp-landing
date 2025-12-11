@@ -1,0 +1,51 @@
+[
+  {
+    "id": "survey_1765441635795_tj8fsl2fe",
+    "role": "student",
+    "timestamp": "2025-12-11T08:27:15.795Z",
+    "responses": {
+      "role": "student",
+      "class_level": "Middle (6-8)",
+      "school_type": "Semi-Government",
+      "body_safety": [
+        "Menstrual health and related concerns",
+        "Body image, weight, and appearance"
+      ],
+      "safety_boundaries": [
+        "None of these affect me",
+        "Social media pressure about appearance/relationships"
+      ],
+      "academic_stress": [
+        "None of these are major issues for me",
+        "Difficulty concentrating due to home problems"
+      ],
+      "emotional_challenges": [
+        "Mood swings or emotional instability",
+        "Feeling isolated or lonely"
+      ],
+      "coping_behaviors": [
+        "Keep feelings to myself",
+        "Get angry or act out"
+      ],
+      "social_conflicts": [
+        "I rarely have conflicts with other students",
+        "Misunderstandings or communication issues"
+      ],
+      "academic_confidence": 2,
+      "support_systems": [
+        "Online friends or communities",
+        "Mental health professionals"
+      ],
+      "academic_pressure": 4,
+      "support_preferences": [
+        "Educational resources about mental health"
+      ],
+      "personal_concerns": "testing"
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:145.0) Gecko/20100101 Firefox/145.0",
+    "completionTime": 1765441635795,
+    "serverTimestamp": "2025-12-11T08:27:15.892Z",
+    "ip": "::ffff:127.0.0.1",
+    "country": "unknown"
+  }
+]

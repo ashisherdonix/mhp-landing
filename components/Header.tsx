@@ -44,6 +44,9 @@ export default function Header() {
             <Link href="/security" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Data Privacy
             </Link>
+            <Link href="/survey" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Survey
+            </Link>
           </nav>
 
           {/* Desktop CTA Buttons */}
@@ -101,6 +104,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Data Privacy
+              </Link>
+              <Link 
+                href="/survey" 
+                className="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Survey
               </Link>
               
               {/* Mobile CTA Button */}

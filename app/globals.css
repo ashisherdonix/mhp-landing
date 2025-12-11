@@ -102,4 +102,106 @@
   .logo-static .group:hover div {
     width: 0 !important;
   }
+
+  /* Mobile-specific improvements for survey */
+  @media (max-width: 640px) {
+    /* Better touch targets for mobile */
+    input[type="radio"], input[type="checkbox"] {
+      min-width: 20px;
+      min-height: 20px;
+    }
+    
+    /* Improve text readability on small screens */
+    .survey-content {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Better focus states for touch */
+    input:focus, textarea:focus {
+      outline: 2px solid hsl(var(--primary));
+      outline-offset: 2px;
+    }
+    
+    /* Smooth transitions for touch interactions */
+    button, label {
+      transition: all 0.2s ease;
+    }
+    
+    /* Prevent text selection on interactive elements */
+    label {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+  }
+  
+  /* Custom scrollbar for better mobile experience */
+  .survey-container {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+  
+  .survey-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .survey-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .survey-container::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground));
+    border-radius: 3px;
+  }
+
+  /* Touch-friendly active states */
+  .touch-target:active {
+    transform: scale(0.98);
+  }
+  
+  /* Responsive breakpoint for xs screens */
+  @media (min-width: 475px) {
+    .xs\:inline { display: inline; }
+    .xs\:hidden { display: none; }
+  }
+
+  /* Custom animations for survey interactions */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-pulse-once {
+    animation: pulse 0.6s ease-in-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideInRight 0.4s ease-out;
+  }
+  
+  /* Smooth transitions for better UX */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Enhanced focus states for accessibility */
+  .survey-option:focus-within {
+    ring: 2px;
+    ring-color: hsl(var(--primary));
+    ring-offset: 2px;
+  }
 }
